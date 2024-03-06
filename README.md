@@ -39,15 +39,11 @@ uvicorn book_review_app.main:app --reload
       We can define functions that return the required dependency object and pass that function reference to the handler. The fastAPI executes the dependency function when the endpoint is hit and injects the dependency in the handler. Thus, providing the required objects to function. It also manages the lifecycle of the dependency injected.
 
 - Question 3: Code walkthrough
-  - The main entry point of the application is the book_review_app/main.py file. It implements the fastAPI server and define and handles the routes.
-    You can run the api using the main.py file
 
-```bash
-uvicorn book_review_app.main:app --reload
-```
-
-    - The file database.py configures the SQLAlchemy library for handling sqlite database.
-    - The models.py file contains the database table models, here, the Book and the Review models.
-    - The schemas.py file contains the pydantic models for the api endpoint data. It also provides the basic types and validation for the route arguments.
-    - The task.py file contains a dummy function which serves as a background task. When a new review is added it adds a log to the file named 'email_confirmation.txt'.
-    - The test_main.py contains few test for testing the api endpoint.
+  - The main entry point of the application is the book_review_app/main.py file. It implements the fastAPI server and define and handles the routes. You can run the api using the main.py file
+    `uvicorn book_review_app.main:app --reload`
+  - The file database.py configures the SQLAlchemy library for handling sqlite database.
+  - The models.py file contains the database table models, here, the Book and the Review models.
+  - The schemas.py file contains the pydantic models for the api endpoint data. It also provides the basic types and validation for the route arguments.
+  - The task.py file contains a dummy function which serves as a background task. When a new review is added it adds a log to the file named 'email_confirmation.txt'.
+  - The test_main.py contains few test for testing the api endpoint.
