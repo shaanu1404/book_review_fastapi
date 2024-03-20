@@ -26,7 +26,7 @@ uvicorn book_review_app.main:app --reload
 - Question 1: Explain how FastAPI handles asynchronous requests and its
   benefits over synchronous code in Python.
 
-      FastAPI uses **asyncio** library internally. FastAPI uses the Starlette web framework which is built on top of the asyncio library for python.
+      FastAPI uses *asyncio* library internally. FastAPI uses the Starlette web framework which is built on top of the asyncio library for python.
       Therefore, user can define route handler using the syntax 'async def' which will do the handling of the api requests and other asynchronous tasks like i/o, network, etc. efficiently.
 
       This provides some benefits like asynchronous database queries, concurrency on a single thread, non blocking i/o which takes care of multiple requests concurrently, etc. This gives overall improved performance of the api.
